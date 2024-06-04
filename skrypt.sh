@@ -27,7 +27,10 @@ logs(){
 
 case "$1" in
     "--date") date ;;
+    "-d") date;;
     "--logs") logs "$2";;
+    "-l") logs "$2";;
     "--help") help ;;
+    "-h") help;;
     *) help ;;
 esac
