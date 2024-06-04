@@ -25,11 +25,20 @@ logs(){
     echo $index
 }
 
+init(){
+    git clone https://github.com/Kszyszka/narzedzia-w-it-lab4.git .
+    # Może zakończyć się błędami jeśli folder nie jest pusty, ale zgodnie z zadaniem klonuje do aktualnej lokacji
+    export PATH="$(pwd):$PATH"
+    # Dodaje do PATH tylko tymczasowo aby nie bruździć w zmiennej podczas developmentu
+    echo $PATH
+}
+
 case "$1" in
     "--date") date ;;
     "-d") date;;
     "--logs") logs "$2";;
     "-l") logs "$2";;
+    "--init") init;;
     "--help") help ;;
     "-h") help;;
     *) help ;;
