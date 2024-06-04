@@ -22,7 +22,6 @@ logs(){
         name="log$i.txt"
         printf "$name\n$0\n$(date)" > "$name"
     done
-    echo $index
 }
 
 init(){
@@ -33,12 +32,29 @@ init(){
     echo $PATH
 }
 
+error(){
+    if [[ "$1" =~ ^[0-9]+$ ]] && [[ "$1" -gt 0 ]] && [[ ! -z "$1" ]]; then
+        index="$1"
+    else
+        index=100
+    fi
+
+    for i in $(seq 1 $index)
+    do
+        name="error$i.txt"
+        mkdir "error$i"
+        printf "$name\n$0\n$(date)" > "./error$i/$name"
+    done
+}
+
 case "$1" in
     "--date") date ;;
     "-d") date;;
     "--logs") logs "$2";;
     "-l") logs "$2";;
     "--init") init;;
+    "--error") error "$2";;
+    "-e") error "$2";;
     "--help") help ;;
     "-h") help;;
     *) help ;;
