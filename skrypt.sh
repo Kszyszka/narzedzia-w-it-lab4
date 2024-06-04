@@ -11,22 +11,18 @@ help(){
 }
 
 logs(){
-    mkdir -p logs
-    # Logi w osobnym folderze dla zachowania porządku
-
-    if [ "$1" -gt 0 -a "$1" =~ "^[0-9]+$" ]; then
+    if [[ "$1" =~ ^[0-9]+$ ]] && [[ "$1" -gt 0 ]] && [[ ! -z "$1" ]]; then
         index="$1"
     else
         index=100
     fi
 
-    mkdir -p logs
-
     for i in $(seq 1 $index)
     do
         name="log$i.txt"
-        printf "$name\n$0\n$(date)" > "./logs/$name"
+        printf "$name\n$0\n$(date)" > "$name"
     done
+    echo $index
 }
 
 case "$1" in
