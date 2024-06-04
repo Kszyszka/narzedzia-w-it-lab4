@@ -5,9 +5,9 @@ help(){
     printf "skrypt.sh - Skrypt na zaliczenie: Krzysztof Hager 52687\n\n"
     printf "Użycie: ./skrypt.sh <flaga> <opcjonalny argument>\n\n"
     printf "Dostępne flagi:\n"
-    printf -- "--help Wyświetla tę wiadomość.\n"
-    printf -- "--date Wyświetla aktualną datę.\n"
-    printf -- "--logs <liczba> Tworzy folder logs oraz <liczba> plików logs/log<i>.txt, zawierających informacie o dacie, skrypcie oraz numerze loga. Jeśli <liczba> nie zostanie podana lub argument będzie niepoprawny, zostanie domyślnie utworzone 100 logów.\n\n"
+    printf -- "--help -h Wyświetla tę wiadomość.\n"
+    printf -- "--date -d Wyświetla aktualną datę.\n"
+    printf -- "--logs -l <liczba> Tworzy folder logs oraz <liczba> plików logs/log<i>.txt, zawierających informacie o dacie, skrypcie oraz numerze loga. Jeśli <liczba> nie zostanie podana lub argument będzie niepoprawny, zostanie domyślnie utworzone 100 logów.\n\n"
 }
 
 logs(){
